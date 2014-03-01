@@ -10,51 +10,32 @@ namespace Praise_the_Helix
 {
     public class LordsWords
     {
-        public static String word1 = "Up";
-        public static String word2 = "Down";
-        public static String word3 = "Left";
-        public static String word4 = "Right";
-        public static String word5 = "a";
-        public static String word6 = "b";
-        public static String word7 = "Start";
-        public static String word8 = "Select";
-        public static String word9 = "NOW";
-        public static String word10 = "Don't count on that";
-        public static String word11 = "NO!";
-        public static String word12 = "Democracy!";
-        public static String word13 = "Anarchy!";
-        public static String word14 = "Use Surf";
-        public static String word15 = "My sources says: NO";
-        public static String word16 = "Don't forget those who died for us";
-        public static String word17 = "February 23, never forget";
+		public static String[] words = new String[] {
+        	"Up",
+        	"Down",
+        	"Left",
+        	"Right",
+        	"a",
+        	"b",
+        	"Start",
+        	"Select",
+        	"NOW",
+        	"Don't count on that",
+        	"NO!",
+        	"Democracy!",
+        	"Anarchy!",
+        	"Use Surf",
+        	"My sources says: NO",
+        	"Don't forget those who died for us",
+        	"February 23, never forget"
+		}
 
         public String HearOurLord(int i)
-            {
-                if (i == 0)
-                {
-                    return word1;
-                }
-                else if (i == 1) { return word2; }
-                else if (i == 2) { return word3; }
-                else if (i == 3) { return word4; }
-                else if (i == 4) { return word5; }
-                else if (i == 5) { return word6; }
-                else if (i == 6) { return word7; }
-                else if (i == 7) { return word8; }
-                else if (i == 8) { return word9; }
-                else if (i == 9) { return word10; }
-                else if (i == 10) { return word11; }
-                else if (i == 11) { return word12; }
-                else if (i == 12) { return word13; }
-                else if (i == 13) { return word14; }
-                else if (i == 14) { return word15; }
-                else if (i == 15) { return word16; }
-                else if (i == 16) { return word17; }
-                else
-                {
-                    return "Not in the mood";
-                }
-            }
+        {
+			String word = "Not in the mood";
+			if(i < words.Length) word = words[i];
+			return word;
+        }
 
         public enum AppTheme
         {
@@ -84,22 +65,14 @@ namespace Praise_the_Helix
 
         internal static string EasterEgg(int image)
         {
-            if (image == 0)
-            {
-                return "/Images/gods.jpg";
-            }
-            else if (image == 1)
-            {
-                return "/Images/gods2.jpg";
-            }
-            else if (image == 2)
-            {
-                return "/Images/Whenever.jpg";
-            }
-            else
-            {
-                return "/Images/zapdos.jpg";
-            }
+			String[] images = new String[] { 
+				"/Images/gods.jpg",
+				"/Images/gods2.jpg",
+				"/Images/Whenever.jpg"
+			};
+			String result = "/Images/zapdos.jpg";
+			if(image < images.Length) result = images[image];
+			return result;
         }
     }
 }
