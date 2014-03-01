@@ -10,7 +10,7 @@ namespace Praise_the_Helix
 {
     public class LordsWords
     {
-		public static String[] words = new String[] {
+        public static String[] words = new String[] {
         	"Up",
         	"Down",
         	"Left",
@@ -28,7 +28,7 @@ namespace Praise_the_Helix
         	"My sources says: NO",
         	"Don't forget those who died for us",
         	"February 23, never forget"
-		}
+		};
 
         public String HearOurLord(int i)
         {
