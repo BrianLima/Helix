@@ -29,18 +29,20 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="436">
-            	<Run Text="Developped in about 23 hours by:"/>
+            	<Run Text="Developed in about 2 hours by:"/>
             	<LineBreak/>
             	<Run/>
             </TextBlock>
             <TextBlock HorizontalAlignment="Left" Margin="10,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436">
             	<Run Text="Don't forget to pray for our Lord and Savior and follow me on "/>
             	<Run Text="Twitter, if you have any suggestions"/>
+            	<Run Text="(Or found the Reddit comunity eastter egg)"/>
             	<Run Text=", i'll be glad to hear your feed back at reviews or my personal Twitter:"/>
             </TextBlock>
-            <Button Content="Follow me!" HorizontalAlignment="Left" Margin="145,440,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.462,0.557" Click="Button_Click"/>
+            <Button Content="Follow me!" HorizontalAlignment="Left" Margin="10,462,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.462,0.557" Click="Button_Click"/>
             <TextBlock HorizontalAlignment="Left" Margin="145,50,0,0" TextWrapping="Wrap" Text="@Brianostorm" VerticalAlignment="Top" Width="142" FontWeight="Bold"/>
             <Image x:Name ="avatar" Height="242" Margin="101,82,103,283" VerticalAlignment="Center"/>
+            <Button x:Name="RedditTPP" Content="Reddit TPP"  HorizontalAlignment="Left" Margin="173,462,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.462,0.557" Click="RedditTPP_Click" Height="72" Width="163"/>
 
         </Grid>
     </Grid>

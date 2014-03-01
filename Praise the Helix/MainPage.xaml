@@ -53,6 +53,7 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Image x:Name="lordsImage" HorizontalAlignment="Center" Height="370" VerticalAlignment="Top" Width="370" Tap="lordsImage_Tap"/>
             <TextBlock x:Name="lordsWord" HorizontalAlignment="Center" Margin="10,338,10,0" TextWrapping="Wrap" Text="A lot of place holder text things is going on here, please don't forget to overwrite" VerticalAlignment="Top" Height="123" Width="436" FontFamily="Segoe WP Semibold" FontSize="30"/>
+            <Image x:Name="egg" Tap="egg_Tap"  HorizontalAlignment="Left" Height="461" Margin="73,0,0,0" VerticalAlignment="Top" Width="340"/>
 
         </Grid>
 

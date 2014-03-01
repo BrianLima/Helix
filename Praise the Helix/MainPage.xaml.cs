@@ -17,6 +17,8 @@ namespace Praise_the_Helix
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        int eggCount = 0;
+
         // Constructor
         public MainPage()
         {
@@ -91,7 +93,7 @@ namespace Praise_the_Helix
         void appBarButton_Click(object sender, EventArgs e)
         {
             Random rand = new Random();
-            int phrase = rand.Next(11);
+            int phrase = rand.Next(17);
             LordsWords LordsWords = new LordsWords();
             lordsWord.Text = LordsWords.HearOurLord(phrase);
             TileUpdate();
@@ -100,6 +102,24 @@ namespace Praise_the_Helix
         private void lordsImage_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             lordsWord.Text = "DON'T DARE TOUCHING ME!";
+            eggCount += 1;
+            if (eggCount == 50)
+            {
+                Random rand = new Random();
+                int image = rand.Next(0, 3);
+                egg.Visibility = System.Windows.Visibility.Visible;
+                lordsWord.Visibility = System.Windows.Visibility.Collapsed;
+                LordsWords LordsWords = new LordsWords();
+                egg.Source = new BitmapImage(new Uri(LordsWords.EasterEgg(image),UriKind.Relative));
+            }
+        }
+
+        private void egg_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            egg.Visibility = System.Windows.Visibility.Collapsed;
+            lordsWord.Visibility = System.Windows.Visibility.Visible;
+            egg.Source = null;
+            eggCount = 0;
         }
     }
 }

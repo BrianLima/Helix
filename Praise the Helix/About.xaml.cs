@@ -26,5 +26,12 @@ namespace Praise_the_Helix
             follow.Uri = new Uri("https://m.twitter.com/BrianoStorm", UriKind.Absolute);
             follow.Show();
         }
+
+        private void RedditTPP_Click(object sender, RoutedEventArgs e)
+        {
+            WebBrowserTask follow = new WebBrowserTask();
+            follow.Uri = new Uri("http://www.reddit.com/r/twitchplayspokemon/", UriKind.Absolute);
+            follow.Show();
+        }
     }
 }
