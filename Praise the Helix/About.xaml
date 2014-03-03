@@ -1,11 +1,12 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="Praise_the_Helix.About"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+    x:Class="Praise_the_Helix.About"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -29,20 +30,22 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="436">
-            	<Run Text="Developed in about 2 hours by:"/>
-            	<LineBreak/>
-            	<Run/>
+				<Run Text="Developed in about 2 hours by:"/>
+				<LineBreak/>
+				<Run/>
             </TextBlock>
             <TextBlock HorizontalAlignment="Left" Margin="10,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436">
-            	<Run Text="Don't forget to pray for our Lord and Savior and follow me on "/>
-            	<Run Text="Twitter, if you have any suggestions"/>
-            	<Run Text="(Or found the Reddit comunity eastter egg)"/>
-            	<Run Text=", i'll be glad to hear your feed back at reviews or my personal Twitter:"/>
+				<Run Text="Don't forget to pray for our Lord and Savior and follow me on "/>
+				<Run Text="Twitter, if you have any suggestions"/>
+				<Run Text="(Or found the Reddit comunity eastter egg)"/>
+				<Run Text=", i'll be glad to hear your feed back at reviews or my personal Twitter:"/>
             </TextBlock>
             <Button Content="Follow me!" HorizontalAlignment="Left" Margin="10,462,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.462,0.557" Click="Button_Click"/>
             <TextBlock HorizontalAlignment="Left" Margin="145,50,0,0" TextWrapping="Wrap" Text="@Brianostorm" VerticalAlignment="Top" Width="142" FontWeight="Bold"/>
             <Image x:Name ="avatar" Height="242" Margin="101,82,103,283" VerticalAlignment="Center"/>
             <Button x:Name="RedditTPP" Content="Reddit TPP"  HorizontalAlignment="Left" Margin="173,462,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.462,0.557" Click="RedditTPP_Click" Height="72" Width="163"/>
+            <!--Here is the control to display ads on the screen, change adunitid and appid to the deserved values for each app-->
+            <UI:AdControl ApplicationId="c3b403eb-90a8-4734-b08c-77faf9ffd9f7" AdUnitId="10719773" HorizontalAlignment="Left" Height="80" Margin="-10,527,-14,0" VerticalAlignment="Top" Width="480" AdRefreshed="AdControl_AdRefreshed" x:Name="adControl1"/>
 
         </Grid>
     </Grid>

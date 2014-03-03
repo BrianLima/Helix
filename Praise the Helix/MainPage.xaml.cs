@@ -17,12 +17,14 @@ namespace Praise_the_Helix
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        //For the easter egg
         int eggCount = 0;
 
         // Constructor
         public MainPage()
         {
             InitializeComponent();
+            //Replacing all the placeholders
             lordsWord.Text = "Tap the button on the AppBar to hear our Lord and Savior Word";
             lordsImage.Source = new BitmapImage(new Uri("Images/Omanyte.png", UriKind.Relative));
             
@@ -61,11 +63,13 @@ namespace Praise_the_Helix
 
         void appBarMenuItem_Click(object sender, EventArgs e)
         {
+            //Navigate trough pages in the app
             NavigationService.Navigate(new Uri("/About.xaml", UriKind.Relative));
         }
 
         void TileUpdate()
         {
+            //Updating live tiles with actual word
             ShellTile tile = ShellTile.ActiveTiles.FirstOrDefault();
             StandardTileData standardData = new StandardTileData
             {
@@ -79,12 +83,14 @@ namespace Praise_the_Helix
 
         void appBarButtonReview_Click(object sender, EventArgs e)
         {
+            //Initialize a page where user can review the app
             MarketplaceReviewTask task = new MarketplaceReviewTask();
             task.Show();
         }
 
         void appBarButtonShare_Click(object sender, EventArgs e)
         {
+            //Initialize a page where user can share Lords phrases
             ShareStatusTask shareOurLordWord = new ShareStatusTask();
             shareOurLordWord.Status = "Our Lord and Savior Omanyte said: " + lordsWord.Text;
             shareOurLordWord.Show();
@@ -92,15 +98,17 @@ namespace Praise_the_Helix
 
         void appBarButton_Click(object sender, EventArgs e)
         {
+            //Ramdomize the displayed phrase
+            LordsWords LordsWords = new LordsWords(); 
             Random rand = new Random();
-            int phrase = rand.Next(17);
-            LordsWords LordsWords = new LordsWords();
+            int phrase = rand.Next(LordsWords.words.Length);
             lordsWord.Text = LordsWords.HearOurLord(phrase);
             TileUpdate();
         }
 
         private void lordsImage_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            //Handling the Eastter Egg
             lordsWord.Text = "DON'T DARE TOUCHING ME!";
             eggCount += 1;
             if (eggCount == 50)
@@ -116,6 +124,7 @@ namespace Praise_the_Helix
 
         private void egg_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            //Getting rid of the Easter Egg and returning to previous state
             egg.Visibility = System.Windows.Visibility.Collapsed;
             lordsWord.Visibility = System.Windows.Visibility.Visible;
             egg.Source = null;
