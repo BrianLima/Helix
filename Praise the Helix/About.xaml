@@ -45,7 +45,7 @@
             <Image x:Name ="avatar" Height="242" Margin="101,82,103,283" VerticalAlignment="Center"/>
             <Button x:Name="RedditTPP" Content="Reddit TPP"  HorizontalAlignment="Left" Margin="173,462,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.462,0.557" Click="RedditTPP_Click" Height="72" Width="163"/>
             <!--Here is the control to display ads on the screen, change adunitid and appid to the deserved values for each app-->
-            <UI:AdControl ApplicationId="c3b403eb-90a8-4734-b08c-77faf9ffd9f7" AdUnitId="10719773" HorizontalAlignment="Left" Height="80" Margin="-10,527,-14,0" VerticalAlignment="Top" Width="480" AdRefreshed="AdControl_AdRefreshed" x:Name="adControl1"/>
+            <UI:AdControl ApplicationId="c3b403eb-90a8-4734-b08c-77faf9ffd9f7" AdUnitId="10719773" HorizontalAlignment="Left" Height="80" Margin="-10,527,-14,0" VerticalAlignment="Top" Width="480" ErrorOccurred="adControl1_ErrorOccurred" AdRefreshed="AdControl_AdRefreshed" x:Name="adControl1"/>
 
         </Grid>
     </Grid>
