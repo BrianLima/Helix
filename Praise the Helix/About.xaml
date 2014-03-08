@@ -38,7 +38,7 @@
 				<Run Text="Don't forget to pray for our Lord and Savior and follow me on "/>
 				<Run Text="Twitter, if you have any suggestions"/>
 				<Run Text="(Or found the Reddit comunity eastter egg)"/>
-				<Run Text=", i'll be glad to hear your feed back at reviews or my personal Twitter:"/>
+				<Run Text=", i'll be glad to hear your feedback at reviews or my personal Twitter:"/>
             </TextBlock>
             <Button Content="Follow me!" HorizontalAlignment="Left" Margin="10,462,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.462,0.557" Click="Button_Click"/>
             <TextBlock HorizontalAlignment="Left" Margin="145,50,0,0" TextWrapping="Wrap" Text="@Brianostorm" VerticalAlignment="Top" Width="142" FontWeight="Bold"/>

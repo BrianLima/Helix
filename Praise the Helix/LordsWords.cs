@@ -23,7 +23,6 @@ namespace Praise_the_Helix
         	"NOW",
         	"Don't count on that",
         	"NO!",
-        	"Democracy!",
         	"Anarchy!",
         	"Use Surf",
         	"My sources says: NO",
