@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using Microsoft.Phone.Tasks;
 using Windows.UI;
 using System.Windows.Media;
+using Windows.Phone.Speech.Synthesis;
 
 namespace Praise_the_Helix
 {
@@ -19,6 +20,8 @@ namespace Praise_the_Helix
     {
         //For the easter egg
         int eggCount = 0;
+        //SpeechSynthesizer is the common TTS control for WP
+        SpeechSynthesizer talk;
 
         // Constructor
         public MainPage()
@@ -28,8 +31,10 @@ namespace Praise_the_Helix
             lordsWord.Text = "Tap the button on the AppBar to hear our Lord and Savior Word";
             lordsImage.Source = new BitmapImage(new Uri("Images/Omanyte.png", UriKind.Relative));
             
-            // Sample code to localize the ApplicationBar
+            //Code to localize the ApplicationBar
             BuildLocalizedApplicationBar();
+            //Initializing the TTS Service
+            this.talk = new SpeechSynthesizer();
         }
 
         // Sample code for building a localized ApplicationBar
@@ -54,11 +59,29 @@ namespace Praise_the_Helix
             appBarButtonReview.Click += appBarButtonReview_Click;
             ApplicationBar.Buttons.Add(appBarButtonReview);
 
+            ApplicationBarIconButton appBarButtonSpeech = new ApplicationBarIconButton(new Uri("/Images/microphone.png", UriKind.Relative));
+            appBarButtonSpeech.Text = "Speech";
+            appBarButtonSpeech.Click += appBarButtonSpeech_Click;
+            ApplicationBar.Buttons.Add(appBarButtonSpeech);
+
             // Create a new menu item with the localized string from AppResources.
             ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
             appBarMenuItem.Text = "About";
             appBarMenuItem.Click += appBarMenuItem_Click; 
             ApplicationBar.MenuItems.Add(appBarMenuItem);
+        }
+
+        private async void appBarButtonSpeech_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                await talk.SpeakTextAsync(lordsWord.Text);
+            }
+            catch (Exception exception)
+            {
+                
+                throw new Exception("Error when trying to use TTS", exception);
+            }
         }
 
         void appBarMenuItem_Click(object sender, EventArgs e)

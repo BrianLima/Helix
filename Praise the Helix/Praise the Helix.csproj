@@ -123,6 +123,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Praise_the_Helix_2014_03_15_14_53_13.sap" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
@@ -150,9 +151,12 @@
     <Content Include="Images\favs.png" />
     <Content Include="Images\gods.jpg" />
     <Content Include="Images\gods2.jpg" />
+    <Content Include="Images\microphone.png" />
     <Content Include="Images\Omanyte.png" />
     <Content Include="Images\questionmark.png" />
     <Content Include="Images\share.png" />
+    <Content Include="Images\darkSpeech.png" />
+    <Content Include="Images\whiteSpeech.png" />
     <Content Include="Images\Whenever.jpg" />
     <Content Include="Images\whitePin.png" />
     <Content Include="Images\zapdos.jpg" />
