@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Be sure to use the new v1.1 namespace to utilize the new PhraseTopic feature -->
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
+  <!-- The CommandSet Name is used to programmatically access the CommandSet -->
+
+  <CommandSet xml:lang="en-us" Name="CortanaRepeat">
+    <!-- The CommandPrefix provides an alternative to your full app name for invocation -->
+    <!-- Do me a favour and choose something else for your app name :) -->
+
+    <!-- The CommandSet Example appears in the global help alongside your app name -->
+    <Example>All Hail Lord Helix!</Example>
+    <Command Name="NaturalLanguage">
+      <Example> Praise the Helix</Example>
+      <ListenFor>[Cortana] {SummonCommands} </ListenFor>
+      <Feedback> {SummonCommands}</Feedback>
+      <Navigate Target="MainPage.xaml" />
+    </Command>
+
+    <PhraseTopic Label="SummonCommands" Scenario="Natural Language">
+      <Subject>All hail lord Helix</Subject>
+      <Subject>Praise the Helix</Subject>
+    </PhraseTopic>
+
+  </CommandSet>
+
+</VoiceCommands>

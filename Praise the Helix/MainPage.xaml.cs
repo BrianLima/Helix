@@ -13,6 +13,9 @@ using Microsoft.Phone.Tasks;
 using Windows.UI;
 using System.Windows.Media;
 using Windows.Phone.Speech.Synthesis;
+using System.Threading.Tasks;
+using Windows.Phone.Speech.VoiceCommands;
+using System.Diagnostics;
 
 namespace Praise_the_Helix
 {
@@ -71,7 +74,12 @@ namespace Praise_the_Helix
             ApplicationBar.MenuItems.Add(appBarMenuItem);
         }
 
-        private async void appBarButtonSpeech_Click(object sender, EventArgs e)
+        private void appBarButtonSpeech_Click(object sender, EventArgs e)
+        {
+            speech();
+        }
+
+        private async void speech()
         {
             try
             {
@@ -79,8 +87,7 @@ namespace Praise_the_Helix
             }
             catch (Exception exception)
             {
-                
-                throw new Exception("Error when trying to use TTS", exception);
+                MessageBox.Show("Error when trying to use Text to speech", "Error", MessageBoxButton.OK);
             }
         }
 
@@ -121,8 +128,13 @@ namespace Praise_the_Helix
 
         void appBarButton_Click(object sender, EventArgs e)
         {
+            GetNewLordWord();
+        }
+
+        void GetNewLordWord()
+        {
             //Ramdomize the displayed phrase
-            LordsWords LordsWords = new LordsWords(); 
+            LordsWords LordsWords = new LordsWords();
             Random rand = new Random();
             int phrase = rand.Next(LordsWords.words.Length);
             lordsWord.Text = LordsWords.HearOurLord(phrase);
@@ -152,6 +164,48 @@ namespace Praise_the_Helix
             lordsWord.Visibility = System.Windows.Visibility.Visible;
             egg.Source = null;
             eggCount = 0;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.NavigationMode == NavigationMode.New)
+            {
+                string voiceCommandName;
+
+                if (NavigationContext.QueryString.TryGetValue("voiceCommandName", out voiceCommandName))
+                {
+                    HandleVoiceCommand(voiceCommandName);
+                }
+                else
+                {
+                    Task.Run(() => InstallVoiceCommands());
+                }
+            }
+        }
+
+        private void HandleVoiceCommand(string voiceCommandName)
+        {
+            string result = String.Empty;
+            NavigationContext.QueryString.TryGetValue("naturalLanguage", out result);
+            if (!String.IsNullOrEmpty(result))
+            {
+                GetNewLordWord();
+                Task.Run(() => speech());
+            }
+        }
+
+        private async void InstallVoiceCommands()
+        {
+            const string VcdPath = "ms-appx:///VoiceDefinition.xml";
+            try
+            {
+                Uri vcdUri = new Uri(VcdPath);
+                await VoiceCommandService.InstallCommandSetsFromFileAsync(vcdUri);
+            }
+            catch (Exception vcdEx)
+            {
+                Debug.WriteLine(vcdEx.ToString());
+            }
         }
     }
 }

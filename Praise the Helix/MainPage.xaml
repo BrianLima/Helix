@@ -15,32 +15,17 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- LOCALIZATION NOTE:
-            To localize the displayed strings copy their values to appropriately named
-            keys in the app's neutral language resource file (AppResources.resx) then
-            replace the hard-coded text value between the attributes' quotation marks
-            with the binding clause whose path points to that string name.
-
-            For example:
-
-                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-
-            This binding points to the template's string resource named "ApplicationTitle".
-
-            Adding supported languages in the Project Properties tab will create a
-            new resx file per language that can carry the translated values of your
-            UI strings. The binding in these examples will cause the value of the
-            attributes to be drawn from the .resx file that matches the
-            CurrentUICulture of the app at run time.
-         -->
-
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="4.537,17,0,28" Grid.Column="1">
             <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0">
             	<Run FontSize="26" FontFamily="Segoe WP SemiLight" Text="༼ つ ◕_◕ ༽つ "/>
             	<LineBreak/>
@@ -50,10 +35,10 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Image x:Name="lordsImage" HorizontalAlignment="Center" Height="370" VerticalAlignment="Top" Width="370" Tap="lordsImage_Tap"/>
-            <TextBlock x:Name="lordsWord" HorizontalAlignment="Center" Margin="10,338,10,0" TextWrapping="Wrap" Text="A lot of place holder text things is going on here, please don't forget to overwrite" VerticalAlignment="Top" Height="123" Width="436" FontFamily="Segoe WP Semibold" FontSize="30"/>
-            <Image x:Name="egg" Tap="egg_Tap"  HorizontalAlignment="Left" Height="461" Margin="73,0,0,0" VerticalAlignment="Top" Width="340"/>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="4.537,0,12,0" Grid.Column="1">
+            <Image x:Name="lordsImage" Tap="lordsImage_Tap" Margin="47,0,46,202"/>
+            <TextBlock x:Name="lordsWord" Margin="14,338,13,0" TextWrapping="Wrap" Text="A lot of place holder text things is going on here, please don't forget to overwrite" VerticalAlignment="Top" Height="123" FontFamily="Segoe WP Semibold" FontSize="30"/>
+            <Image x:Name="egg" Tap="egg_Tap" Margin="10,0,10,10" Height="562" VerticalAlignment="Bottom"/>
 
         </Grid>
     </Grid>
