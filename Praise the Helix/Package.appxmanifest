@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="abba58eb-c415-4206-b72d-89ec3a68d05b" Publisher="CN=Brian" Version="2.0.0.0" />
+  <Identity Name="28788Briano.PraisetheHelix" Publisher="CN=06F6B67F-67A4-40D5-8234-77A470002853" Version="2.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="b3e49a2a-571e-4e96-b3c0-241db01f0d34" PhonePublisherId="6202f402-e26e-4109-87fb-9e797666d999" />
   <Properties>
     <DisplayName>Praise the Helix</DisplayName>

@@ -79,11 +79,11 @@ namespace Praise_the_Helix
             speech();
         }
 
-        private async void speech()
+        private  void speech()
         {
             try
             {
-                await talk.SpeakTextAsync(lordsWord.Text);
+                 talk.SpeakTextAsync(lordsWord.Text);
             }
             catch (Exception exception)
             {
@@ -185,13 +185,14 @@ namespace Praise_the_Helix
 
         private void HandleVoiceCommand(string voiceCommandName)
         {
-            string result = String.Empty;
-            NavigationContext.QueryString.TryGetValue("naturalLanguage", out result);
-            if (!String.IsNullOrEmpty(result))
-            {
+            //string result = String.Empty;
+            //NavigationContext.QueryString.TryGetValue("naturalLanguage", out result);
+            //if (!String.IsNullOrEmpty(result))
+            //{
                 GetNewLordWord();
-                Task.Run(() => speech());
-            }
+                //Task.Run(() => 
+                    speech();
+            //}
         }
 
         private async void InstallVoiceCommands()
